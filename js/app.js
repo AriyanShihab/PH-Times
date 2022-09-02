@@ -92,9 +92,10 @@ const loadDefualtData = (catID, catName) => {
                   data.total_view ? data.total_view : "no post count Find"
                 } </span>M</div>
                 <div >
-                <button onclick="loadDetails('${
+             
+                <label onclick="loadDetails('${
                   data._id
-                }')" class="px-2 py-3 rounded text-white bg-indigo-500 font-bold" >Post Details</button>
+                }')" for="my-modal" class=" modal-button px-2 py-3 rounded text-white bg-indigo-500 font-bold">open modal</label>
                 </div>
               </div>
             </div>
@@ -110,7 +111,27 @@ const loadDefualtData = (catID, catName) => {
 };
 
 const loadDetails = (postID) => {
-  console.log(postID);
+  const url = ` https://openapi.programming-hero.com/api/news/${postID}`;
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+      const mainData = data.data[0];
+      const modalParent = document.getElementById("modalParent");
+      modalParent.innerHTML = `
+
+      <h3 class="font-bold text-lg">${mainData.title}</h3>
+        <img src="${mainData.image_url}" alt="" />
+        <p class="py-4">
+          ${mainData.details.substring(0, 200)}
+        </p>
+        
+        <div class="modal-action">
+          <label for="my-modal" class="btn">Yay!</label>
+        </div>
+
+      `;
+      console.log(mainData);
+    });
 };
 
 loadDefualtData("04", "Sports");
