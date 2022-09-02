@@ -118,15 +118,43 @@ const loadDetails = (postID) => {
       const mainData = data.data[0];
       const modalParent = document.getElementById("modalParent");
       modalParent.innerHTML = `
+      <div class="flex justify-between  px-2 py-4  border-b border-gray-700">
+        <div class="aouther md:flex justify-between items-center gap-3" style="min-width:70%;">
+            <img src="${
+              mainData.author.img
+            }" alt="" class="w-[60px] h-[60]" style=" border-radius: 50%;">
+           <div>
+           <h2>${
+             mainData.author.name
+               ? mainData.author.name
+               : "No Author Name Found"
+           }</h2>
+          <p> Published Date: ${
+            mainData.author.published_date
+              ? mainData.author.published_date
+              : "no realese date found"
+          }</p></div>
 
-      <h3 class="font-bold text-lg">${mainData.title}</h3>
+        </div>
+
+        <div class="stat mt-4 ">
+        
+
+            <p>Post Veiw: ${
+              mainData.total_view ? mainData.total_view : "no data found"
+            }</p>
+        </div>
+
+    </div>
+
+      <h3 class="font-semibold text-lg my-6">${mainData.title}</h3>
         <img src="${mainData.image_url}" alt="" />
         <p class="py-4">
           ${mainData.details.substring(0, 200)}
         </p>
         
         <div class="modal-action">
-          <label for="my-modal" class="btn">Yay!</label>
+          <label for="my-modal" class="btn">Close</label>
         </div>
 
       `;
