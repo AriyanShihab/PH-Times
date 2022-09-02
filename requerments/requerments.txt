@@ -1,0 +1,52 @@
+file name: requerments for assignment 06.
+author: Ariyan Shihab
+date: 2-09-2022
+
+++++++===== assingmnet deadline time 3-09-2022 11:59PM
+
+
+must to do
+    1:website a must have a name (without "news portal")
+
+   2: must have navigation bar on the top
+
+   3: must have two option at the ringht of the nav menu, website name or logo on the left side, other are optional
+
+   4: display dynamic catagory  bellow nav bar, and when someone click any navigation it will call a dynamic api 
+
+   5: must have to display the thumbnail image, titlle, if the dicription is learger, make it sortet,and then disply something like triple dot (go to w3 school for details), 
+
+   6: display post aoutor name, outhor image, post view, rest are optional,
+   
+   7: create button in every blog post for open a modal for displaying detils of that perticular post
+            what to show on modal:
+                if there is no data on any obj property, check with optional chaining,and then display "no data found"
+
+
+
+
+for bonous 
+    1:disply a loader when data is loading (only when user click on any catagory button)
+
+    2:display post count (number of post on the top of the post container) if there no post. show "no post found "
+
+    3: use ES6 as much as as possible, use erorr hander in fetch or async functions
+
+    4: use any css framework, icon library,
+
+    5: make responsive (must for mobile);
+
+    6: create a html file link with blog on the top nave, this file contains:
+        1:diffarent between normal function and arrow function,
+        2: filter,fild, map , for each diffarent
+        3: teplate string importance
+        4: diffarent between for var let const
+    7: minium 10 github commit
+    8: sort post with the post veiw count, (the post have more veiw will appere on the top)
+
+
+
+
+
+
+
