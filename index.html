@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- tailwind config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              //   myPrimary: "#fa6957",
+            },
+          },
+        },
+      };
+    </script>
+    <!-- deisy ui -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <!-- 
+    task in this file
+    1: create navber
+
+
+
+
+-->
+
+  <!-- top navigation start -->
+
+  <body class="bg-gray-300">
+    <div class="bg-white">
+      <div
+        class="conatiner lg:w-3/4 mx-auto m-4 border-0 border-b border-b-gray-800 pb-3"
+      >
+        <div class="navbar flex-1">
+          <div class="flex-1">
+            <a class="text-gray-800 md:text-2xl font-bold"
+              ><span class="p-3 rounded bg-indigo-500 text-white px-4">PH</span>
+              Times</a
+            >
+          </div>
+          <div class="links">
+            <ul
+              class="list-none flex gap-3 md:text-[20px] font-bold text-gray-800"
+            >
+              <li><a href="#">News</a></li>
+              <li><a href="./blogs/blog.html">Blog</a></li>
+              <img
+                src="./images/profile.png"
+                class="rounded-[50%] h-[40px] w-[40px]"
+                alt=""
+              />
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- top navigation end -->
+
+    <script src="./js/app.js"></script>
+  </body>
+</html>
