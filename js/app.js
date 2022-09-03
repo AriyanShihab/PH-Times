@@ -30,6 +30,8 @@ loadCategory();
 const loadDefualtData = (catID, catName) => {
   const url = `https://openapi.programming-hero.com/api/news/category/${catID}`;
   const postCount = document.getElementById("postCount");
+  const speen = document.getElementById("speen");
+  speen.classList.remove("hidden");
   fetch(url)
     .then((res) => res.json())
     .then((sporstsData) => {
@@ -38,6 +40,11 @@ const loadDefualtData = (catID, catName) => {
         postCount.innerText = `${unsortedData.length} post found for category ${catName}`;
       } else {
         postCount.innerText = `Ops! No Post Found found for category ${catName}`;
+        setTimeout(() => {
+          if (!speen.classList.contains("hidden")) {
+            speen.classList.add("hidden");
+          }
+        }, 1000);
       }
       const originalData = Array.from(unsortedData).sort(
         (a, b) =>
@@ -51,23 +58,23 @@ const loadDefualtData = (catID, catName) => {
         div.innerHTML = `
         <div id="postCard" class="m-4">
           <div
-            class="flex flex-col md:flex-row gap-3 p-4 bg-white rounded-md shadow-2xl"
+            class="flex flex-col md:flex-row gap-3 p-4 bg-gray-800 border border-gray-50 border-opacity-20 rounded-md shadow-2xl"
           >
-            <div class="postImage" style="min-width: 20%">
+            <div class="postImage" style="min-width:20%">
               <img src="${data.thumbnail_url}" alt="" class="rounded-xl" />
             </div>
             <div class="postContent">
               <h2
                 id="postTitle"
-                class="font-bold text-gray-800  text-2xl"
+                class="font-bold text-gray-300  text-2xl"
               >
                 ${data.title ? data.title : "post heading Not Found"}
               </h2>
-              <p id="postSercription" class="text-gray-700 mt-4">
+              <p id="postSercription" class="text-gray-50 mt-4">
                 ${data.details.substring(0, 300)}
               </p>
               <div
-                class="postStat flex flex-wrap gat-5 justify-between items-center mt-6 px-4"
+                class="postStat flex flex-wrap gap-2 justify-between  sm:flex-row items-center mt-6 px-4"
               >
                 <div class="author flex gap-3">
                   <div class="authorImage">
@@ -76,7 +83,7 @@ const loadDefualtData = (catID, catName) => {
                     }" alt="" class="w-[40px] h-[40]" style=" border-radius: 50%;" />
                   </div>
                   <div class="authorInfo">
-                    <h4>${
+                    <h4 class="text-green-500 font-bold">${
                       data.author.name
                         ? data.author.name
                         : "No author Name Found"
@@ -88,14 +95,15 @@ const loadDefualtData = (catID, catName) => {
                     }</p>
                   </div>
                 </div>
-                <div class="postVeiw"> <span> ${
+                <div>
+                <div class="postVeiw md:mb-0 mb-4">Total post Veiw: <span class="font-bold text-green-500"> ${
                   data.total_view ? data.total_view : "no post count Find"
-                } </span>M</div>
+                }</span><span class="font-bold text-green-500">M</span></div>
                 <div >
              
                 <label onclick="loadDetails('${
                   data._id
-                }')" for="my-modal" class=" modal-button px-2 py-3 rounded text-white bg-indigo-500 font-bold">open modal</label>
+                }')" for="my-modal" class=" modal-button px-2 py-3 rounded text-gray-700 bg-green-500 font-bold block min-w-full ">Post Details</label></div>
                 </div>
               </div>
             </div>
@@ -103,12 +111,14 @@ const loadDefualtData = (catID, catName) => {
         </div>
         `;
         postCardContainer.appendChild(div);
+        speen.classList.add("hidden");
       });
     })
     .catch((err) => {
       console.log(err);
     });
 };
+// post details modal
 
 const loadDetails = (postID) => {
   const url = ` https://openapi.programming-hero.com/api/news/${postID}`;

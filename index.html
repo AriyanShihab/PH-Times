@@ -24,34 +24,52 @@
       type="text/css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      @media screen and (max-width: 767px) {
+        .postImage {
+          min-width: 100%;
+        }
+        .postImage img {
+          min-width: 100%;
+          object-fit: cover;
+          max-height: 300px;
+        }
+        #categoryContainer li {
+          display: block;
+        }
+      }
+
+      #categoryContainer li {
+        cursor: pointer;
+        border: 1px solid #f2f2ff22;
+        border-radius: 4px;
+        padding: 8px 12px;
+      }
+      #categoryContainer li:hover {
+        background-color: #6366f1;
+        color: #fff;
+      }
+    </style>
   </head>
-  <!-- 
-    task in this file
-    1: create navber
-    2: display category on ui
-
-
-
-
--->
 
   <!-- top navigation start -->
 
-  <body class="bg-gray-50 pb-5 m-0">
+  <body class="bg-gray-900 pb-5 m-0">
     <main>
       <div
-        class="conatiner lg:w-3/4 mx-auto m-4 border-0 border-b border-b-gray-800 pb-3"
+        class="conatiner lg:w-3/4 mx-auto m-4 bg-gray-800 border-0 border-b border-b-gray-600 pb-3"
       >
         <div class="navbar flex-1">
           <div class="flex-1">
-            <a class="text-gray-800 md:text-2xl font-bold"
+            <a class="text-gray-300 md:text-2xl font-bold"
               ><span class="p-3 rounded bg-indigo-500 text-white px-4">PH</span>
               Times</a
             >
           </div>
           <div class="links">
             <ul
-              class="list-none flex gap-3 md:text-[20px] font-bold text-gray-800"
+              class="list-none flex items-center gap-3 md:text-[20px] font-bold text-indigo-500"
             >
               <li><a href="#">News</a></li>
               <li><a href="./blogs/blog.html">Blog</a></li>
@@ -69,26 +87,56 @@
     <!-- top navigation end -->
 
     <!-- category part start -->
-    <div class="main my-8">
-      <div class="conatiner lg:w-3/4 mx-auto bg-gray-300 p-3 rounded mt-5">
+    <div class="main my-8 p-3">
+      <div class="conatiner lg:w-3/4 mx-auto bg-gray-700 p-3 rounded mt-5">
         <ul
           id="categoryContainer"
-          class="flex justify-between flex-wrap gap-2 text-gray-700 font-semibold"
+          class="flex justify-between flex-wrap gap-2 text-indigo-500 font-semibold"
         ></ul>
       </div>
     </div>
     <!-- category part end -->
     <!-- post count start -->
 
-    <div class="main my-8">
-      <div class="conatiner lg:w-3/4 mx-auto bg-white p-3 rounded mt-5">
-        <h2 class="font-bold"><span id="postCount">11 post Found</span></h2>
+    <div class="main my-8 p-3">
+      <div class="conatiner lg:w-3/4 mx-auto bg-gray-800 p-3 rounded mt-5">
+        <h2 class="font-bold"><span id="postCount"></span></h2>
       </div>
     </div>
     <!-- post count end -->
+
+    <!-- loader start -->
+    <div id="speen" class="my-8 hidden" style="height: 300px">
+      <div
+        class="conatiner w-[100px] mx-auto flex items-center justify-center mt-5"
+      >
+        <?xml version="1.0" ?><svg
+          class="feather feather-loader animate-spin"
+          fill="none"
+          height="24"
+          stroke="#6366f1"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line x1="12" x2="12" y1="2" y2="6" />
+          <line x1="12" x2="12" y1="18" y2="22" />
+          <line x1="4.93" x2="7.76" y1="4.93" y2="7.76" />
+          <line x1="16.24" x2="19.07" y1="16.24" y2="19.07" />
+          <line x1="2" x2="6" y1="12" y2="12" />
+          <line x1="18" x2="22" y1="12" y2="12" />
+          <line x1="4.93" x2="7.76" y1="19.07" y2="16.24" />
+          <line x1="16.24" x2="19.07" y1="7.76" y2="4.93" />
+        </svg>
+      </div>
+    </div>
+    <!-- loader end -->
+
     <!-- sort by start -->
-    <div class="main my-8">
-      <div class="conatiner lg:w-3/4 mx-auto bg-white p-3 rounded mt-5">
+    <div class="main my-8 m-3">
+      <div class="conatiner lg:w-3/4 mx-auto bg-gray-700 p-3 rounded mt-5">
         <div
           class="flex flex-col md:flex-row justify-between gap-2 items-center"
         >
@@ -116,51 +164,6 @@
     <div class="main">
       <div class="conatiner lg:w-3/4 mx-auto p-3 rounded mt-5">
         <div id="postCardContainer"></div>
-        <!-- <div id="postCard">
-          <div
-            class="flex flex-col md:flex-row gap-3 p-4 bg-white rounded-md shadow-2xl"
-          >
-            <div class="postImage" style="min-width: 20%">
-              <img src="./images/download.jpg" alt="" class="rounded-xl" />
-            </div>
-            <div class="postContent">
-              <h2
-                id="postTitle"
-                class="font-bold text-gray-800 md:text-3xl text-2xl"
-              >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quibusdam author
-              </h2>
-              <p id="postSercription" class="text-gray-700 mt-4">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
-                laudantium non dignissimos eos ut accusamus aliquam inventore
-                ducimus neque repudiandae, cumque sed, laboriosam repellat
-                aliquid vero. Et in officia aperiam numquam, tempora magnam
-                consequuntur, iure quis doloremque at vel accusantium excepturi
-                porro fugit atque molestiae!
-              </p>
-              <div
-                class="postStat flex flex-wrap gat-5 justify-between items-center mt-6 px-4"
-              >
-                <div class="author flex gap-3">
-                  <div class="authorImage">
-                    <img src="./images/profile.png" alt="" />
-                  </div>
-                  <div class="authorInfo">
-                    <h4>Someone Special</h4>
-                    <p>jan 10, 2022</p>
-                  </div>
-                </div>
-                <div class="postVeiw">1.4</div>
-                <div
-                  class="px-2 py-3 rounded text-white bg-indigo-500 font-bold"
-                >
-                  Post Details
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
       </div>
     </div>
     <!-- post container end -->
