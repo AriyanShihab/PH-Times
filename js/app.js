@@ -160,7 +160,11 @@ const loadDetails = (postID) => {
       <h3 class="font-semibold text-lg my-6">${mainData.title}</h3>
         <img src="${mainData.image_url}" alt="" />
         <p class="py-4">
-          ${mainData.details.substring(0, 200)}
+          ${
+            mainData.details
+              ? mainData.details.substring(0, 200)
+              : "no data found"
+          }
         </p>
         
         <div class="modal-action">
@@ -173,11 +177,3 @@ const loadDetails = (postID) => {
 };
 
 loadDefualtData("04", "Sports");
-
-const information = {
-  language: "JavaScript",
-  createdBy: "Brendan Eich",
-  createdIn: 1995,
-};
-
-const sentence = `${information.language} is a programminglanguage createdBy ${information.createdBy} in the year of${information.createdIn}`;

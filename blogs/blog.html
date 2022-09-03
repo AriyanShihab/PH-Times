@@ -38,15 +38,16 @@
       class="container bg-gray-900 p-10 grid place-items-center"
       style="min-height: 50vh"
     >
-      <div class="p-10 bg-gray-700 rounded">
-        <h2 class="md:text-4xl text-2xl text-center font-black text-yellow-500">
+      <div class="p-10 bg-gray-700 rounded text-center mx-auto " style="min-width:80vw ;">
+        <h2 class="md:text-4xl text-2xl  font-black text-yellow-500">
           Four Questions Of
           <span
-            class="bg-yellow-500 text-gray-800 font-black px-8 py-4 rounded block mt-10"
+            class="bg-yellow-500 text-gray-800 font-black px-8 py-4 rounded block my-10"
           >
             ES6</span
           >
         </h2>
+        <a href="../index.html" class="bg-yellow-500 px-6 py-4 font-bold rounded">Back To Main Page</a>
       </div>
     </div>
 
@@ -116,5 +117,131 @@
         </p>
       </div>
     </main>
+
+    <main class="lg:w-3/4 mx-auto p-5 m-4">
+      <div
+        class="my-2 bg-gray-800 p-4 rounded border border-gray-50 border-opacity-20"
+      >
+        <h2
+          class="font-bold text-2xl text-yellow-500 capitalize border-b border-gray-300 pb-4"
+        >
+          diffarent between filter, find, map, and for each
+        </h2>
+        <p class="text-gray-300 my-4 capitalize">
+          all of them are araay method of JavaScript, they have diffarent
+          usecase, and we can do a lot of task with these very importsnt
+          methodds
+          <span class="text-yellow-500"
+            >Here are the diffarent bitween them</span
+          >
+        </p>
+        <p class="font-bold text-2xl text-yellow-500">Arry.prototype.filter</p>
+        <p class="text-gray-300 my-3">
+          filter method takes and callbaack function and call that function for
+          every eleemnt of the array, if the element passed the conditions
+          inside that callback function it will push it to an arry and finaly
+          return the the new array,
+          <span class="text-yellow-500"
+            >filter method does not change the original array, and if no element
+            passout the conditions it will return a blank array</span
+          >
+        </p>
+        <img
+          class="rounded-lg shadow-md mx-auto my-4"
+          src="../images/Snap (2).png"
+          alt=""
+        />
+        <!-- find -->
+        <p class="font-bold text-2xl text-yellow-500">Arry.prototype.find</p>
+        <p class="text-gray-300 my-3">
+          find method also takes and callbaack function and call that function
+          for every eleemnt of the array, if
+          <span class="text-yellow-500">any</span> element passed the conditions
+          inside that callback function it will return it !
+          <span class="text-yellow-500"
+            >find method does not change the original array, and if no element
+            passout the conditions it will return undifined</span
+          >
+        </p>
+        <img
+          class="rounded-lg shadow-md mx-auto my-4"
+          src="../images/Snap (3).png"
+          alt=""
+        />
+        <!-- for each and map -->
+        <p class="font-bold text-2xl text-yellow-500">forEach(), map()</p>
+        <p class="text-gray-300 p-4 my-4">
+            <span class="font-bold text-yellow-500"> forEach()</span>
+            <ul class="list-decimal text-gray-300 p-2 my-0">
+                <li>The forEach() method does not create a new array based on the given array.</li>
+                <li>The forEach() method returns “undefined“.</li>
+                <li>The forEach() method doesn’t return anything hence the method chaining technique cannot be applied here. </li>
+
+            </ul>
+        </p>
+        <p class="text-gray-300 p-4 my-4">
+            <span class="font-bold text-yellow-500"> map()</span>
+            <ul class="list-decimal text-gray-300 p-2 my-0">
+                <li>The map() method creates an entirely new array.
+                </li>
+                <li>The map() method returns the newly created array according to the provided callback function.</li>
+                <li>With the map() method, we can chain the other array Instance methods i.e returned value of the map() method invokes the next method in the chain.</li>
+
+            </ul>
+        </p>
+      </div>
+    </main>
+
+    <main class="lg:w-3/4 mx-auto p-5 m-4">
+        <div  class="my-2 bg-gray-800 p-4 rounded border border-gray-50 border-opacity-20">
+        <p class="font-bold text-2xl text-yellow-500"> What is template string </p>
+
+        <p class="text-gray-300 my-3">Template literals are literals delimited with backtick (`) characters, allowing for multi-line strings, for string interpolation with embedded expressions, and for special constructs called tagged templates.
+
+            Template literals are sometimes informally called template strings, because they are used most commonly for string interpolation (to create strings by doing substitution of placeholders). However, a tagged template literal may not result in a string; it can be used with a custom tag function to perform whatever operations you want on the different parts of the template literal.</p>
+
+            <img class="rounded-lg mx-auto shadow-lg" src="../images/Snap (4).png" alt="">
+
+        </div>
+    </main>
+    <!-- var let const -->
+    <main class="lg:w-3/4 mx-auto p-5 m-4">
+        <div  class="my-2 bg-gray-800 p-4 rounded border border-gray-50 border-opacity-20">
+        <p class="font-bold text-2xl text-yellow-500"> What is diffarent between var let and const </p>
+
+        <p class=" my-3">
+            <span class="font-bold text-yellow-500 block">var</span>
+      <ul class="text-gray-300 list-disc pl-4">
+        <li>Gloabl and Function scope</li>
+        <li>can be redeclare</li>
+        <li>can be reassign</li>
+        <li>Hoisted</li>
+      </ul>
+        </p>
+        <p class=" my-3">
+            <span class="font-bold text-yellow-500 block">let</span>
+            <ul class="text-gray-300 list-disc pl-4"> <li>block scope</li>
+                <li>can not redeclare</li>
+                <li>can be reassign</li>
+                <li>Hoisted but not insilized</li></ul>
+           
+        </p>
+        <p class="my-3">
+            <span class="font-bold text-yellow-500 block">const</span>
+            <ul class="text-gray-300 list-disc pl-4"><li>block scope</li>
+                <li>can not redeclare</li>
+                <li>can not be reassign</li>
+                <li>Hoisted but not insilized</li>
+                <li>must assign a value when declare</li></ul>
+            
+        </p>
+
+            <img class="rounded-lg mx-auto shadow-lg mt-10" src="../images/var let const.webp" alt="">
+
+        </div>
+    </main>
+    <footer class="bg-yellow-500 py-10 text-center">
+        <p class="font-bold text-gray-800">All reight Reseve by Ariyan Shihab</p>
+    </footer>
   </body>
 </html>
