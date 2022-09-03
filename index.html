@@ -3,6 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
     <!-- tailwind css -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- tailwind config -->
@@ -23,9 +30,12 @@
       rel="stylesheet"
       type="text/css"
     />
-    <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
+      * {
+        font-family: "Poppins", sans-serif;
+        text-transform: capitalize;
+      }
       @media screen and (max-width: 767px) {
         .postImage {
           min-width: 100%;
@@ -56,9 +66,9 @@
   <!-- top navigation start -->
 
   <body class="bg-gray-900 pb-5 m-0">
-    <main>
+    <main class="bg-gray-800">
       <div
-        class="conatiner lg:w-3/4 mx-auto m-4 bg-gray-800 border-0 border-b border-b-gray-600 pb-3"
+        class="conatiner lg:w-3/4 mx-auto m-4 border-0 border-b border-b-gray-600 pb-3"
       >
         <div class="navbar flex-1">
           <div class="flex-1">
@@ -100,7 +110,9 @@
 
     <div class="main my-8 p-3">
       <div class="conatiner lg:w-3/4 mx-auto bg-gray-800 p-3 rounded mt-5">
-        <h2 class="font-bold"><span id="postCount"></span></h2>
+        <h2 class="font-bold text-gray-300">
+          <span class="text-white" id="postCount"></span>
+        </h2>
       </div>
     </div>
     <!-- post count end -->
@@ -141,7 +153,9 @@
           class="flex flex-col md:flex-row justify-between gap-2 items-center"
         >
           <div class="sortBy">
-            <h2>Sort By <span id="sortMethod">Post Veiw</span></h2>
+            <h2 class="text-2xl font-semibold text-white">
+              Sort By <span id="sortMethod">Post Veiw</span>
+            </h2>
           </div>
           <div class="btnContainer">
             <button
@@ -172,7 +186,7 @@
 
     <input type="checkbox" id="my-modal" class="modal-toggle" />
     <div class="modal">
-      <div class="modal-box" id="modalParent"></div>
+      <div class="modal-box bg-gray-900 text-gray-300" id="modalParent"></div>
     </div>
 
     <script src="./js/app.js"></script>

@@ -88,7 +88,7 @@ const loadDefualtData = (catID, catName) => {
                         ? data.author.name
                         : "No author Name Found"
                     }</h4>
-                    <p>${
+                    <p class="text-green-500">${
                       data.author.published_date
                         ? data.author.published_date
                         : "No data Found"
@@ -96,7 +96,7 @@ const loadDefualtData = (catID, catName) => {
                   </div>
                 </div>
                 <div>
-                <div class="postVeiw md:mb-0 mb-4">Total post Veiw: <span class="font-bold text-green-500"> ${
+                <div class="postVeiw text-green-500 md:mb-0 mb-4">Total post Veiw: <span class="font-bold text-green-500"> ${
                   data.total_view ? data.total_view : "no post count Find"
                 }</span><span class="font-bold text-green-500">M</span></div>
                 <div >
@@ -134,12 +134,12 @@ const loadDetails = (postID) => {
               mainData.author.img
             }" alt="" class="w-[60px] h-[60]" style=" border-radius: 50%;">
            <div>
-           <h2>${
+           <h2 class="text-green-500 font-bold">${
              mainData.author.name
                ? mainData.author.name
                : "No Author Name Found"
            }</h2>
-          <p> Published Date: ${
+          <p class="text-green-500 font-bold"> Published Date: ${
             mainData.author.published_date
               ? mainData.author.published_date
               : "no realese date found"
@@ -164,7 +164,7 @@ const loadDetails = (postID) => {
         </p>
         
         <div class="modal-action">
-          <label for="my-modal" class="btn">Close</label>
+          <label for="my-modal" class="btn bg-green-500 text-gray-700">Close</label>
         </div>
 
       `;
