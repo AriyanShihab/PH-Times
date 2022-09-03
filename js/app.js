@@ -174,9 +174,6 @@ const loadDetails = (postID) => {
 
 loadDefualtData("04", "Sports");
 
-function arg(x, y) {
-  console.log(arguments); // log al the argumants
-}
-const arg = (x, y) => {
-  console.log(arguments); // reffarence error
-};
+const number = [2.3, 5, 7, 3, 6];
+const greaterThanThree = number.filter((num) => num > 3);
+console.log(greaterThanThree); // [5,7,6]
