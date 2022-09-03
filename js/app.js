@@ -173,3 +173,10 @@ const loadDetails = (postID) => {
 };
 
 loadDefualtData("04", "Sports");
+
+function arg(x, y) {
+  console.log(arguments); // log al the argumants
+}
+const arg = (x, y) => {
+  console.log(arguments); // reffarence error
+};

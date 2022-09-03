@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- tailwind config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              //   myPrimary: "#fa6957",
+            },
+          },
+        },
+      };
+    </script>
+    <title>four question of ES6</title>
+
+    <style>
+      * {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900">
+    <div
+      class="container bg-gray-900 p-10 grid place-items-center"
+      style="min-height: 50vh"
+    >
+      <div class="p-10 bg-gray-700 rounded">
+        <h2 class="md:text-4xl text-2xl text-center font-black text-yellow-500">
+          Four Questions Of
+          <span
+            class="bg-yellow-500 text-gray-800 font-black px-8 py-4 rounded block mt-10"
+          >
+            ES6</span
+          >
+        </h2>
+      </div>
+    </div>
+
+    <main class="lg:w-3/4 mx-auto p-5 m-4">
+      <div
+        class="my-2 bg-gray-800 p-4 rounded border border-gray-50 border-opacity-20"
+      >
+        <h2
+          class="font-bold text-2xl text-yellow-500 capitalize border-b border-gray-300 pb-4"
+        >
+          what are the diffarent between normal function and arrow function?
+        </h2>
+        <p class="font-bold text-yellow-500 my-4">1. Syntax</p>
+
+        <p class="mt-10 text-gray-300">
+          arrow function also known as fat arrow function in JavaScript is
+          intrudesud in 2015 inthe 6th version eachma script called ES6. both
+          normal and arrow function do almost same kind of task, but there are
+          some <span class="text-yellow-500">important</span> difarent between
+          them <br />
+          <br />
+          The first diffrent we will notice about arrow function is, it's
+          simplefyed syntax itself
+        </p>
+        <img
+          class="rounded-lg shadow-md mx-auto my-4"
+          src="../images/Snap.png"
+          alt=""
+        />
+
+        <p class="font-bold text-yellow-500 my-4">2. Arguments binding</p>
+
+        <p class="text-gray-300">
+          in normal function we access its all the argument using Arguments
+          binding, that means if we want to take a look at all the argumnts of a
+          normal funtion, we do it by simple console log, but in arrow function
+          we cant not do it.
+        </p>
+        <img
+          class="rounded-lg shadow-md mx-auto my-4"
+          src="../images/Snap (1).png"
+          alt=""
+        />
+
+        <p class="font-bold text-yellow-500 my-4">3. Use of this keyword</p>
+
+        <p class="text-gray-300 my-4">
+          Unlike regular functions, arrow functions
+          <span class="text-yellow-500">do not have their own this</span>. The
+          value of this inside an arrow function remains the same throughout the
+          lifecycle of the function and is always bound to the value of this in
+          the closest non-arrow parent function.
+          <span class="text-yellow-500"
+            >if there is no normal function of its scope, this key word will
+            refar to window object inside arrow function</span
+          >
+        </p>
+        <p class="font-bold text-yellow-500 my-4">4. Using new keyword</p>
+
+        <p class="text-gray-300 my-4">
+          Regular functions created using function declarations or expressions
+          are constructible and callable. Since regular functions are
+          constructible, they can be called using the new keyword. However, the
+          arrow functions are only callable and not constructible, i.e arrow
+          functions can never be used as constructor functions. Hence, they can
+          never be invoked with the new keyword.
+        </p>
+      </div>
+    </main>
+  </body>
+</html>
