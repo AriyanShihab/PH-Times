@@ -174,6 +174,10 @@ const loadDetails = (postID) => {
 
 loadDefualtData("04", "Sports");
 
-const number = [2.3, 5, 7, 3, 6];
-const greaterThanThree = number.filter((num) => num > 3);
-console.log(greaterThanThree); // [5,7,6]
+const information = {
+  language: "JavaScript",
+  createdBy: "Brendan Eich",
+  createdIn: 1995,
+};
+
+const sentence = `${information.language} is a programminglanguage createdBy ${information.createdBy} in the year of${information.createdIn}`;
